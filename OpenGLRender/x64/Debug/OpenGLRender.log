@@ -1,11 +1,4 @@
-﻿  EBO.cpp
-  main.cpp
-  shaderClass.cpp
-  VAO.cpp
-F:\c++\OpenGLRender\VAO.cpp(13,63): warning C4244: 'argument': conversion from 'GLsizeiptr' to 'GLsizei', possible loss of data
-  VBO.cpp
-  Generating Code...
-  glad.c
+﻿  main.cpp
 glfw3.lib(init.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(init.obj)' or at ''; linking object as if no debug info
 glfw3.lib(window.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(window.obj)' or at ''; linking object as if no debug info
 glfw3.lib(context.obj) : warning LNK4099: PDB '' was not found with 'glfw3.lib(context.obj)' or at ''; linking object as if no debug info
