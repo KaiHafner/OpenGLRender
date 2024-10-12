@@ -152,7 +152,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shaderClass.cpp" />
     <ClCompile Include="stb.cpp" />
-    <ClCompile Include="Teture.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VAO.cpp" />
     <ClCompile Include="VBO.cpp" />
   </ItemGroup>
