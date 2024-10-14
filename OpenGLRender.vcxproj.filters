@@ -78,5 +78,8 @@
     <Image Include="dirt.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
+    <Image Include="C:\Users\kaiha\Downloads\brick.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

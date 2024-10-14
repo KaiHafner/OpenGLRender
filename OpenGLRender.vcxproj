@@ -169,6 +169,7 @@
     <None Include="default.vert" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="C:\Users\kaiha\Downloads\brick.png" />
     <Image Include="dirt.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
