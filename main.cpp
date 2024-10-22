@@ -115,7 +115,7 @@ int main(void)
         glfwPollEvents(); // Take care of all GLFW events
     }
 
-    //Deletes all objects created
+   //Deletes all objects created
    // Delete all the objects we've created
     VAO1.Delete();
     VBO1.Delete();
