@@ -91,7 +91,7 @@ int main(void)
 
 
     // Generates Shader object using shaders defualt.vert and default.frag
-    Shader shaderProgram("default.vert", "default.frag");
+    Shader shaderProgram("Resource/Shader/default.vert", "Resource/Shader/default.frag");
 
     // Generates Vertex Array Object and binds it
     VAO VAO1;
@@ -116,7 +116,7 @@ int main(void)
     pyramidModel = glm::translate(pyramidModel, pyramidPos);
 
     // Shader for light cube
-    Shader lightShader("light.vert", "light.frag");
+    Shader lightShader("Resource/Shader/light.vert", "Resource/Shader/light.frag");
     VAO lightVAO;    // Generates Vertex Array Object and binds it
     lightVAO.Bind();
     VBO lightVBO(lightVertices, sizeof(lightVertices)); // Generates Vertex Buffer Object and links it to vertices
@@ -149,9 +149,9 @@ int main(void)
     //Texture brickTex("brick.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE);
     //brickTex.texUnit(shaderProgram, "tex1", 0);
 
-    Texture planksTex("planks.png", GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE);
+    Texture planksTex("Resource/Textures/planks.png", GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE);
     planksTex.texUnit(shaderProgram, "tex0", 0);
-    Texture planksSpec("planksSpec.png", GL_TEXTURE_2D, 1, GL_RED, GL_UNSIGNED_BYTE);
+    Texture planksSpec("Resource/Textures/planksSpec.png", GL_TEXTURE_2D, 1, GL_RED, GL_UNSIGNED_BYTE);
     planksSpec.texUnit(shaderProgram, "tex1", 1);
 
     //Enables depth buffer

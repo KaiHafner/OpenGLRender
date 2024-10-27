@@ -24,77 +24,77 @@
     <ClCompile Include="glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="shaderClass.cpp">
+    <ClCompile Include="src\shaderClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VBO.cpp">
+    <ClCompile Include="src\VBO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EBO.cpp">
+    <ClCompile Include="src\EBO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VAO.cpp">
+    <ClCompile Include="src\VAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="stb.cpp">
+    <ClCompile Include="src\stb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
+    <ClCompile Include="src\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
+    <ClCompile Include="src\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h">
+    <ClInclude Include="Headers\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="shaderClass.h">
+    <ClInclude Include="Headers\shaderClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="VBO.h">
+    <ClInclude Include="Headers\VBO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EBO.h">
+    <ClInclude Include="Headers\EBO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="VAO.h">
+    <ClInclude Include="Headers\VAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
+    <ClInclude Include="Headers\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.vert">
+    <None Include="Resource\Shader\default.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="default.frag">
+    <None Include="Resource\Shader\default.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="light.frag">
+    <None Include="Resource\Shader\light.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="light.vert">
+    <None Include="Resource\Shader\light.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="dirt.png">
+    <Image Include="Resource\Textures\dirt.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
-    <Image Include="C:\Users\kaiha\Downloads\brick.png">
+    <Image Include="Resource\Textures\planks.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
-    <Image Include="planks.png">
+    <Image Include="Resource\Textures\planksSpec.png">
       <Filter>Resource Files\Textures</Filter>
     </Image>
-    <Image Include="planksSpec.png">
-      <Filter>Resource Files\Textures</Filter>
+    <Image Include="Resource\Textures\brick.png">
+      <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
 </Project>

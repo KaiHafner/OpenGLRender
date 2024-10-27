@@ -71,19 +71,19 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>F:\c++\OpenGLRender\Libraries\include;$(IncludePath)</IncludePath>
+    <IncludePath>F:\c++\OpenGLRender\Resource;F:\c++\OpenGLRender\Headers;F:\c++\OpenGLRender\Libraries\include;$(IncludePath)</IncludePath>
     <LibraryPath>F:\c++\OpenGLRender\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>F:\c++\OpenGLRender\Libraries\include;$(IncludePath)</IncludePath>
+    <IncludePath>F:\c++\OpenGLRender\Resource;F:\c++\OpenGLRender\Headers;F:\c++\OpenGLRender\Libraries\include;$(IncludePath)</IncludePath>
     <LibraryPath>F:\c++\OpenGLRender\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>F:\c++\OpenGLRender\Libraries\include;$(IncludePath)</IncludePath>
+    <IncludePath>F:\c++\OpenGLRender\Resource;F:\c++\OpenGLRender\Headers;F:\c++\OpenGLRender\Libraries\include;$(IncludePath)</IncludePath>
     <LibraryPath>F:\c++\OpenGLRender\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>F:\c++\OpenGLRender\Libraries\include;$(IncludePath)</IncludePath>
+    <IncludePath>F:\c++\OpenGLRender\Resource;F:\c++\OpenGLRender\Headers;F:\c++\OpenGLRender\Libraries\include;$(IncludePath)</IncludePath>
     <LibraryPath>F:\c++\OpenGLRender\Libraries\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -92,6 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\c++\OpenGLRender\Resource\Textures;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -107,6 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\c++\OpenGLRender\Resource\Textures;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -122,6 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\c++\OpenGLRender\Resource\Textures;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,6 +140,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\c++\OpenGLRender\Resource\Textures;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,35 +151,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="EBO.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\EBO.cpp" />
     <ClCompile Include="glad.c" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="shaderClass.cpp" />
-    <ClCompile Include="stb.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="VAO.cpp" />
-    <ClCompile Include="VBO.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\shaderClass.cpp" />
+    <ClCompile Include="src\stb.cpp" />
+    <ClCompile Include="src\Texture.cpp" />
+    <ClCompile Include="src\VAO.cpp" />
+    <ClCompile Include="src\VBO.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="EBO.h" />
-    <ClInclude Include="shaderClass.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="VAO.h" />
-    <ClInclude Include="VBO.h" />
+    <ClInclude Include="Headers\Camera.h" />
+    <ClInclude Include="Headers\EBO.h" />
+    <ClInclude Include="Headers\shaderClass.h" />
+    <ClInclude Include="Headers\Texture.h" />
+    <ClInclude Include="Headers\VAO.h" />
+    <ClInclude Include="Headers\VBO.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.frag" />
-    <None Include="default.vert" />
-    <None Include="light.frag" />
-    <None Include="light.vert" />
+    <None Include="Resource\Shader\default.frag" />
+    <None Include="Resource\Shader\default.vert" />
+    <None Include="Resource\Shader\light.frag" />
+    <None Include="Resource\Shader\light.vert" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="C:\Users\kaiha\Downloads\brick.png" />
-    <Image Include="dirt.png" />
-    <Image Include="planks.png" />
-    <Image Include="planksSpec.png" />
+    <Image Include="Resource\Textures\brick.png" />
+    <Image Include="Resource\Textures\dirt.png" />
+    <Image Include="Resource\Textures\planks.png" />
+    <Image Include="Resource\Textures\planksSpec.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
