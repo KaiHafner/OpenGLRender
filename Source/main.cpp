@@ -143,16 +143,16 @@ int main(void)
 
 
     //Textures
-    //Texture dirtTex("dirt.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE);
-    //dirtTex.texUnit(shaderProgram, "tex0", 0);
-
-    //Texture brickTex("brick.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE);
-    //brickTex.texUnit(shaderProgram, "tex1", 0);
-
     Texture planksTex("Resource/Textures/planks.png", GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE);
     planksTex.texUnit(shaderProgram, "tex0", 0);
     Texture planksSpec("Resource/Textures/planksSpec.png", GL_TEXTURE_2D, 1, GL_RED, GL_UNSIGNED_BYTE);
     planksSpec.texUnit(shaderProgram, "tex1", 1);
+
+    Texture dirtTex("Resource/Textures/dirt.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE);
+    dirtTex.texUnit(shaderProgram, "tex2", 0);
+
+    Texture brickTex("Resource/Textures/brick.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE);
+    brickTex.texUnit(shaderProgram, "tex3", 0);
 
     //Enables depth buffer
     glEnable(GL_DEPTH_TEST);

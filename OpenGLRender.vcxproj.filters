@@ -94,7 +94,7 @@
       <Filter>Resource Files\Textures</Filter>
     </Image>
     <Image Include="Resource\Textures\brick.png">
-      <Filter>Resource Files</Filter>
+      <Filter>Resource Files\Textures</Filter>
     </Image>
   </ItemGroup>
 </Project>
