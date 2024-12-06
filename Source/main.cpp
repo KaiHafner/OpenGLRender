@@ -175,7 +175,6 @@ int main(void)
 
         planksTex.Bind(); //binds texture
         planksSpec.Bind();
-        //planksSpec.Bind();
 
         VAO1.Bind(); // Bind the VAO so OpenGL knows to use it
         glDrawElements(GL_TRIANGLES, sizeof(indices)/sizeof(int), GL_UNSIGNED_INT, 0); // Draw primitives, number of indices, datatype of indices, index of indices
