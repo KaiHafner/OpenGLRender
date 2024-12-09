@@ -1,6 +1,6 @@
 #include "Mesh.h"
 
-Mesh::Mesh(std::vector <Vertex>& vertices, std::vector <GLuint>& indices, std::vector<Texture>& textures)
+Mesh::Mesh(std::vector <Vertex>& vertices, std::vector <GLuint>& indices, std::vector <Texture>& textures)
 {
 	Mesh::vertices = vertices;
 	Mesh::indices = indices;
@@ -35,12 +35,11 @@ void Mesh::Draw(Shader& shader, Camera& camera)
     {
         std::string num;
         std::string type = textures[i].type;
-
-        if (type == "diffuse") 
+        if (type == "diffuse")
         {
             num = std::to_string(numDiffuse++);
         }
-        else if (type == "Specular")
+        else if (type == "specular")
         {
             num = std::to_string(numSpecular++);
         }

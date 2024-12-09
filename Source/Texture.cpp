@@ -5,9 +5,12 @@ Texture::Texture(const char* image, const char* texType, GLuint slot, GLenum for
 	// Assigns the type of the texture ot the texture object
 	type = texType;
 
-	int widthImg, heightImg, numColCh; //Store Width, height and number of colour channels of image
-	stbi_set_flip_vertically_on_load(true); //Flips image
-	unsigned char* bytes = stbi_load(image, &widthImg, &heightImg, &numColCh, 0); // Reads the image from a file and stores it in bytes
+	// Stores the width, height, and the number of color channels of the image
+	int widthImg, heightImg, numColCh;
+	// Flips the image so it appears right side up
+	stbi_set_flip_vertically_on_load(true);
+	// Reads the image from a file and stores it in bytes
+	unsigned char* bytes = stbi_load(image, &widthImg, &heightImg, &numColCh, 0);
 
 	// Generates an OpenGL texture object
 	glGenTextures(1, &ID);
@@ -24,8 +27,14 @@ Texture::Texture(const char* image, const char* texType, GLuint slot, GLenum for
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, widthImg, heightImg, 0, format, pixelType, bytes); // Assigns the image to the OpenGL Texture object
-	glGenerateMipmap(GL_TEXTURE_2D); // Generates MipMaps
+	// Extra lines in case you choose to use GL_CLAMP_TO_BORDER
+	// float flatColor[] = {1.0f, 1.0f, 1.0f, 1.0f};
+	// glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, flatColor);
+
+	// Assigns the image to the OpenGL Texture object
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, widthImg, heightImg, 0, format, pixelType, bytes);
+	// Generates MipMaps
+	glGenerateMipmap(GL_TEXTURE_2D);
 
 	// Deletes the image data as it is already in the OpenGL Texture object
 	stbi_image_free(bytes);

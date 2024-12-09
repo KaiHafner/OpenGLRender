@@ -8,9 +8,9 @@ layout (location = 3) in vec2 aTex;
 
 //Outputs for the Fragment Shader
 out vec3 currentPos;
-out vec2 texCoord;
-out vec3 colour;
 out vec3 Normal;
+out vec3 colour;
+out vec2 texCoord;
 
 //Imports camera matrix from the main function
 uniform mat4 camMatrix;
@@ -20,7 +20,6 @@ void main()
 {
     //Calculates posistion
 	currentPos = vec3(model * vec4(aPos, 1.0f));
-
     Normal = aNormal;
     colour = aColour;
     texCoord = aTex;
