@@ -46,7 +46,7 @@ int main(void)
 
     Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
 
-    Model model("models/axe/scene.gltf");
+    Model model("models/fox/scene.gltf");
 
 
     while (!glfwWindowShouldClose(window)) //Loops until window closed
