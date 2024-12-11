@@ -56,13 +56,13 @@ int main(void)
         // Clean the back buffer and depth buffer
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
         // Handles camera inputs
         camera.Inputs(window);
         // Updates and exports the camera matrix to the Vertex Shader
         camera.updateMatrix(45.0f, 0.1f, 100.0f);
 
-        //model.Draw(shaderProgram, camera);
+        // Draw a model
+        model.Draw(shaderProgram, camera);
 
         // Swap the back buffer with the front buffer
         glfwSwapBuffers(window);
@@ -71,7 +71,6 @@ int main(void)
     }
 
     //Deletes all objects created
-    // Delete all the objects we've created
     shaderProgram.Delete();
 
     //Deletes window before ending the program
