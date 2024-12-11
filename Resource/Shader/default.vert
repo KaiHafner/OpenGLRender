@@ -14,15 +14,19 @@ out vec2 texCoord;
 
 //Imports camera matrix from the main function
 uniform mat4 camMatrix;
+
 uniform mat4 model;
+uniform mat4 translation;
+uniform mat4 rotation;
+uniform mat4 scale;
 
 void main()
 {
     //Calculates posistion
-	currentPos = vec3(model * vec4(aPos, 1.0f));
+	currentPos = vec3(model * translation * -rotation * scale * vec4(aPos, 1.0f));
     Normal = aNormal;
     colour = aColour;
-    texCoord = aTex;
+    texCoord = mat2(0.0, -1.0, 1.0, 0.0) * aTex;;
 
     //Outputs position of all vertices
     gl_Position = camMatrix * vec4(currentPos, 1.0);

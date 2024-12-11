@@ -156,6 +156,7 @@
     <ClCompile Include="Source\EBO.cpp" />
     <ClCompile Include="Source\glad.c" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Model.cpp" />
     <ClCompile Include="Source\shaderClass.cpp" />
     <ClCompile Include="Source\stb.cpp" />
     <ClCompile Include="Source\Texture.cpp" />
@@ -165,6 +166,7 @@
   <ItemGroup>
     <ClInclude Include="Headers\Camera.h" />
     <ClInclude Include="Headers\EBO.h" />
+    <ClInclude Include="Headers\Model.h" />
     <ClInclude Include="Headers\shaderClass.h" />
     <ClInclude Include="Headers\Texture.h" />
     <ClInclude Include="Headers\VAO.h" />
