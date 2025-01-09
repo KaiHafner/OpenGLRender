@@ -76,7 +76,7 @@ void Model::traverseNode(unsigned int nextNode, glm::mat4 matrix)
 		rotation = glm::make_quat(rotValues);
 	}
 	// Get scale if it exists
-	glm::vec3 scale = glm::vec3(1.0f, 1.0f, 1.0f);
+	glm::vec3 scale = glm::vec3(0.5f, 0.5f, 0.5f);
 	if (node.find("scale") != node.end())
 	{
 		float scaleValues[3];
