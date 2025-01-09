@@ -2,21 +2,21 @@
 
 Model::Model(const char* file)
 {
-	// Make a JSON object
+	//Make a JSON object
 	std::string text = get_file_contents(file);
 	JSON = json::parse(text);
 
-	// Get the binary data
+	//Gets the binary data
 	Model::file = file;
 	data = getData();
 
-	// Traverse all nodes
+	//Traverse all nodes
 	traverseNode(0);
 }
 
 void Model::Draw(Shader& shader, Camera& camera)
 {
-	// Go over all meshes and draw each one
+	//Go over all meshes and draw each one
 	for (unsigned int i = 0; i < meshes.size(); i++)
 	{
 		meshes[i].Mesh::Draw(shader, camera, matricesMeshes[i]);
@@ -25,13 +25,12 @@ void Model::Draw(Shader& shader, Camera& camera)
 
 void Model::loadMesh(unsigned int indMesh)
 {
-	// Get all accessor indices
+	//Get all accessor indices
 	unsigned int posAccInd = JSON["meshes"][indMesh]["primitives"][0]["attributes"]["POSITION"];
 	unsigned int normalAccInd = JSON["meshes"][indMesh]["primitives"][0]["attributes"]["NORMAL"];
 	unsigned int texAccInd = JSON["meshes"][indMesh]["primitives"][0]["attributes"]["TEXCOORD_0"];
 	unsigned int indAccInd = JSON["meshes"][indMesh]["primitives"][0]["indices"];
 
-	// Use accessor indices to get all vertices components
 	std::vector<float> posVec = getFloats(JSON["accessors"][posAccInd]);
 	std::vector<glm::vec3> positions = groupFloatsVec3(posVec);
 	std::vector<float> normalVec = getFloats(JSON["accessors"][normalAccInd]);

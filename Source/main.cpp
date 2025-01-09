@@ -11,7 +11,7 @@ int main(void)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
-    //Tell GLFW we are using the CORE profile (only modern functions)
+    //Tell GLFW we are using the CORE profile 
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     //Creates a GLFWwindow object
@@ -47,26 +47,26 @@ int main(void)
     Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
 
     Model model("models/fox/scene.gltf");
+    //Model model2("models/second/Elephant.gltf");
 
-
-    while (!glfwWindowShouldClose(window)) //Loops until window closed
+    while (!glfwWindowShouldClose(window))
     {
-        // Specify the color of the background
         glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
-        // Clean the back buffer and depth buffer
+        //Clean the back buffer and depth buffer
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        // Handles camera inputs
+        //Handles camera inputs
         camera.Inputs(window);
-        // Updates and exports the camera matrix to the Vertex Shader
+        //Updates and exports the camera matrix to the Vertex Shader
         camera.updateMatrix(45.0f, 0.1f, 100.0f);
 
-        // Draw a model
+        //Draw a model
         model.Draw(shaderProgram, camera);
+        //model2.Draw(shaderProgram, camera);
 
-        // Swap the back buffer with the front buffer
+        //Swap the back buffer with the front buffer
         glfwSwapBuffers(window);
-        // Take care of all GLFW events
+        //Take care of all GLFW events
         glfwPollEvents();
     }
 

@@ -7,6 +7,7 @@ Camera::Camera(int width, int height, glm::vec3 position)
 	Position = position;
 }
 
+
 void Camera::updateMatrix(float FOVdeg, float nearPlane, float farPlane)
 {
 	glm::mat4 view = glm::mat4(1.0f);
@@ -53,10 +54,10 @@ void Camera::Inputs(GLFWwindow* window)
 		Position += speed * -Up;
 	}
 
-	//Increase speed
+	//Increase speed (sprinting)
 	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
 	{
-		speed = 0.4f;
+		speed = 0.01f;
 	}
 	else if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE)
 	{
@@ -66,9 +67,8 @@ void Camera::Inputs(GLFWwindow* window)
 	//Looking around
 	if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
 	{
+		//Hides cursor + sets centre screen
 		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
-
-
 		if (firstClick)
 		{
 			glfwSetCursorPos(window, (width / 2), (height / 2));
@@ -82,14 +82,14 @@ void Camera::Inputs(GLFWwindow* window)
 		//Gets the coordinates of cursor
 		glfwGetCursorPos(window, &mouseX, &mouseY);
 
-		//Normalises and shifts coordinates of cursor, so begin in middle of screen, then "transforms" them into degrees
+		//Normalises and shifts coordinates of cursor
 		float rotX = sens * (float)(mouseY - (height / 2)) / height;
 		float rotY = sens * (float)(mouseX - (width / 2)) / width;
 
 		//Calculates upcoming vertical chnage in orientation
 		glm::vec3 newOrientation = glm::rotate(Orientation, glm::radians(-rotX), glm::normalize(glm::cross(Orientation, Up)));
 
-		//Decides whether or not the next vertical Orientation is legal or not (stops breaking neck)
+		//stops breaking neck
 		if (abs(glm::angle(newOrientation, Up) - glm::radians(90.0f)) <= glm::radians(85.0f))
 		{
 			Orientation = newOrientation;
@@ -98,7 +98,7 @@ void Camera::Inputs(GLFWwindow* window)
 		// Rotates the Orientation left and right
 		Orientation = glm::rotate(Orientation, glm::radians(-rotY), Up);
 
-		// Sets mouse cursor to the middle of the screen
+		//Sets mouse cursor to the middle of the screen
 		glfwSetCursorPos(window, (width / 2), (height / 2));
 	}
 	else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_RELEASE)
